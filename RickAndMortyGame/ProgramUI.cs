@@ -12,42 +12,49 @@ namespace RickAndMortyGame
         // This can be a class later JERRY IS DAD BETH IS MOM AND SUMMER IS SISTER MR POOPY BUTT
         public enum Item { plumbus, meeseeks, portalgun, beer, tinyRick, blimBlam };
         public List<Item> inventory = new List<Item>();
-       
+
 
         public static Room garage = new Room(
             Texts.Splashes["garage"],
             new List<string> { "driveway", "house" },
-            new List<Item> { Item.meeseeks, Item.plumbus }
+            new List<Item> { Item.meeseeks, Item.plumbus },
+            new List<Event> { }
         );
         public static Room driveway = new Room(
             Texts.Splashes["driveway"],
             new List<string> { "garage" },
-            new List<Item> { }
+            new List<Item> { },
+            new List<Event> { }
         );
         public static Room house = new Room(
             Texts.Splashes["house"],
             new List<string> { "garage" },
-            new List<Item> { Item.portalgun, Item.beer }
+            new List<Item> { Item.portalgun, Item.beer },
+            new List<Event> { }
         );
         public static Room upstairs = new Room(
             Texts.Splashes["upstairs"],
             new List<string> { "house", "attic", "mortysRoom" },
-            new List<Item> { }
+            new List<Item> { },
+            new List<Event> { }
         );
         public static Room attic = new Room(
             Texts.Splashes["attic"],
             new List<string> { "upstairs" },
-            new List<Item> { }
+            new List<Item> { },
+            new List<Event> { }
         );
         public static Room mortysRoom = new Room(
             Texts.Splashes["mortysRoom"],
             new List<string> { "upstairs" },
-            new List<Item> { }
+            new List<Item> { },
+            new List<Event> { }
         );
         public static Room laboratory = new Room(
-        Texts.Splashes["laboratory"],
-        new List<string> { "garage" },
-        new List<Item> { Item.tinyRick, Item.blimBlam }
+            Texts.Splashes["laboratory"],
+            new List<string> { "garage" },
+            new List<Item> { Item.tinyRick, Item.blimBlam },
+            new List<Event> { }
         );
 
         public Dictionary<string, Room> RoomDictionary = new Dictionary<string, Room>
@@ -161,6 +168,6 @@ namespace RickAndMortyGame
             }
         }
 
-        
+
     }
 }

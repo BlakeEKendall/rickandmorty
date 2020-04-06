@@ -12,6 +12,7 @@ namespace RickAndMortyGame
         public string Splash { get; }//AT THIS POINT, I DON'T KNOW HOW THE HELL I'D KNOW TO PUT THIS HERE 25MARCH
         public List<string> Exits { get; }//I DO THINK I UNDERSTAND WHY THIS WOULD BE HERE AS A GETTER AS ROOM COULD HAVE MULITPLE EXITS
         public List<Item> Items { get; }//SAME IN UNDERSTANDING AS MULTIPLE ITEMS LIKE WEAPON I GUESS COULD BE USED FROM HERE. BUT WHAT IS ITEM VS STRING?
+        public List<Event> Events { get; }
 
         // I planned to add an Events list, that contains Event class objects
         // An Event can have items or actions that it depends on, possibly
@@ -20,11 +21,12 @@ namespace RickAndMortyGame
         // TODO:
         // public List<Event> Events { get; }
 
-        public Room(string splash, List<string> exits, List<Item> items)
+        public Room(string splash, List<string> exits, List<Item> items, List<Event> events)
         {
             Splash = splash;
             Items = items;
             Exits = exits;
+            Events = events;
         }
         // These methods are similar to the "repo pattern", which could also be called
         //    "list control":
@@ -38,6 +40,13 @@ namespace RickAndMortyGame
             if (Items.Contains(item))
             {
                 Items.Remove(item);
+            }
+        }
+        public void ResolveEvent(Event resolvedEvent)
+        {
+            if (Events.Contains(resolvedEvent))
+            {
+                Events.Remove(resolvedEvent);
             }
         }
     }
