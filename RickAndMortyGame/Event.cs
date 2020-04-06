@@ -26,19 +26,22 @@ namespace RickAndMortyGame
 
     public class Result
     {
-        public EventType Type;
-        public string ResultDestination;
-        public Item ResultItem;
+        public EventType Type { get; }
+        public string ResultDestination { get; }
+        public Item ResultItem { get; }
+        public string ResultMessage { get; }
 
-        public Result(string resultDestination)
+        public Result(string resultDestination, string resultMessage)
         {
             Type = EventType.newExit;
             ResultDestination = resultDestination;
+            ResultMessage = resultMessage;
         }
-        public Result(Item resultItem)
+        public Result(Item resultItem, string resultMessage)
         {
             Type = EventType.newExit;
             ResultItem = resultItem;
+            ResultMessage = resultMessage;
         }
     }
 }

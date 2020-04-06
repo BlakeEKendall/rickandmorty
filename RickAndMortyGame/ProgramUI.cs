@@ -23,7 +23,7 @@ namespace RickAndMortyGame
                 new Event(
                     EventType.newExit,
                     "secret scanner",
-                    new Result("laboratory")
+                    new Result("laboratory", Texts.EventMessages["openLab"] )
                 )
             }
         );
@@ -167,6 +167,7 @@ namespace RickAndMortyGame
                 else if (command.StartsWith("use ") || command.StartsWith("activate "))
                 {
                     bool eventTriggered = false;
+                    string eventMessage = "(Error: Event message not found)";
                     if (room.Events.Count > 0)
                     {
                         foreach(Event roomEvent in room.Events)
@@ -179,16 +180,21 @@ namespace RickAndMortyGame
                             {
                                 room.AddExit(roomEvent.EventResult.ResultDestination);
                                 eventTriggered = true;
+                                eventMessage = roomEvent.EventResult.ResultMessage;
                             } else
                             {
                                 inventory.Add(roomEvent.EventResult.ResultItem);
                                 eventTriggered = true;
+                                eventMessage = roomEvent.EventResult.ResultMessage;
                             }
                         }
                     }
                     if (!eventTriggered)
                     {
                         Console.WriteLine("I doubt you know how.");
+                    } else
+                    {
+                        Console.WriteLine(eventMessage);
                     }
                 }
                 else

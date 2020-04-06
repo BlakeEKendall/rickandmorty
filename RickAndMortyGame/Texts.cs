@@ -50,5 +50,12 @@ namespace RickAndMortyGame
                     "Obvious exits are GARAGE\n"
             }
         };
+
+        public static Dictionary<string, string> EventMessages = new Dictionary<string, string>()
+        {
+            {
+                "openLab", "You reveal the door to your secret lab under the garage."
+            }
+        };
     }
 }
