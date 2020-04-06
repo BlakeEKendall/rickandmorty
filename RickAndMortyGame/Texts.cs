@@ -28,12 +28,12 @@ namespace RickAndMortyGame
             {
                 "house", "\n\n\n\n\nYou're in the house now. It's drab and smells like " +
                     "lemon pine-sol with a hint of stale fart.\n\n" +
-                    "Obvious exits are GARAGE and KITCHEN\n"
+                    "Obvious exits are UPSTAIRS, GARAGE, and KITCHEN\n"
             },
             {
                 "upstairs", "\n\n\n\n\nYou're upstairs in the house now. It's dark and " +
                     "smells like mold and sweaty socks.\n\n" +
-                    "Obvious exits are MORTY'S ROOM, HOUSE and ATTIC\n"
+                    "Obvious exits are MORTY'S ROOM, HOUSE, and ATTIC\n"
             },
             {
                 "attic", "\n\n\n\n\nYou're in the attic. Now you're lost in the dark" +

@@ -35,7 +35,7 @@ namespace RickAndMortyGame
         );
         public static Room house = new Room(
             Texts.Splashes["house"],
-            new List<string> { "garage" },
+            new List<string> { "garage", "upstairs", "kitchen" },
             new List<Item> { Item.portalgun, Item.beer },
             new List<Event> { }
         );
