@@ -43,6 +43,18 @@ namespace RickAndMortyGame
             {
                 "mortysRoom", "\n\n\n\n\nYou're in Morty's room. It's filthy.\n\n" +
                     "Obvious exits are UPSTAIRS\n"
+            },
+            {
+                "laboratory", "\n\n\n\n\nYou've entered your secret lab under the garage." +
+                    " It's way nicer than the rest of the house.\n\n" +
+                    "Obvious exits are GARAGE\n"
+            }
+        };
+
+        public static Dictionary<string, string> EventMessages = new Dictionary<string, string>()
+        {
+            {
+                "openLab", "You reveal the door to your secret lab under the garage."
             }
         };
     }
