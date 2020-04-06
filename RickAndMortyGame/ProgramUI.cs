@@ -46,7 +46,7 @@ namespace RickAndMortyGame
         );
         public static Room laboratory = new Room(
         Texts.Splashes["laboratory"],
-        new List<string> { "underneath", "hidden" },
+        new List<string> { "garage" },
         new List<Item> { Item.tinyRick, Item.blimBlam }
         );
 
