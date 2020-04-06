@@ -80,7 +80,7 @@ namespace RickAndMortyGame
             Room room = garage;
             bool alive = true;
             Console.Clear();
-            Console.WriteLine("You accidentally killed Morty.\n" +
+            Console.WriteLine("\n\nYou accidentally killed Morty.\n" +
                     "In order to construct a passable facsimile, you must collect " +
                     "enough Mortys from other dimensions to assemble from them " +
                     "Morty's genetic structure and connectome.");
