@@ -12,9 +12,16 @@ namespace RickAndMortyGame
     {
         public enum EventType { newExit, getItem }
         public string useTrigger;
+        public EventType Type;
         // public string lookTrigger;
-
         public Result EventResult;
+
+        public Event(EventType eventType, string trigger, Result eventResult)
+        {
+            Type = eventType;
+            useTrigger = trigger;
+            EventResult = eventResult;
+        }
     }
 
     public class Result

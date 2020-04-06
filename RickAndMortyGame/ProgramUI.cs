@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static RickAndMortyGame.Event;
 
 namespace RickAndMortyGame
 {
@@ -18,7 +19,13 @@ namespace RickAndMortyGame
             Texts.Splashes["garage"],
             new List<string> { "driveway", "house" },
             new List<Item> { Item.meeseeks, Item.plumbus },
-            new List<Event> { }
+            new List<Event> {
+                new Event(
+                    EventType.newExit,
+                    "secret scanner",
+                    new Result("laboratory")
+                )
+            }
         );
         public static Room driveway = new Room(
             Texts.Splashes["driveway"],
@@ -159,7 +166,30 @@ namespace RickAndMortyGame
                 }
                 else if (command.StartsWith("use ") || command.StartsWith("activate "))
                 {
-                    Console.WriteLine("I doubt you know how.");
+                    bool eventTriggered = false;
+                    if (room.Events.Count > 0)
+                    {
+                        foreach(Event roomEvent in room.Events)
+                        {
+                            if (!command.Contains(roomEvent.useTrigger))
+                            {
+                                continue;
+                            }
+                            if (roomEvent.Type == EventType.newExit)
+                            {
+                                room.AddExit(roomEvent.EventResult.ResultDestination);
+                                eventTriggered = true;
+                            } else
+                            {
+                                inventory.Add(roomEvent.EventResult.ResultItem);
+                                eventTriggered = true;
+                            }
+                        }
+                    }
+                    if (!eventTriggered)
+                    {
+                        Console.WriteLine("I doubt you know how.");
+                    }
                 }
                 else
                 {

@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attack.cs" />
+    <Compile Include="Event.cs" />
     <Compile Include="MortyBox.cs" />
     <Compile Include="Mortys\EvilMorty.cs" />
     <Compile Include="Mortys\IMorty.cs" />
